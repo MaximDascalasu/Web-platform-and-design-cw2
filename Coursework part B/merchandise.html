@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title> Merchandise </title>
+  <link rel="stylesheet" type="text/css" href="style.css" />
+<script>
+
+	
+function Test()
+	{
+	
+	fullname=document.getElementById("Name").value;
+	i1=document.getElementById("item1").value;
+	i2=document.getElementById("item2").value;
+	i3=document.getElementById("item3").value;
+	totalitems=document.getElementById("totalItems").value= parseInt(i1)+ parseInt(i2)+parseInt(i3);
+	itemcost=document.getElementById("totalCost").value = (parseInt(i1)*15)+ (parseInt(i2)*10)+ (parseInt(i3)*20);
+	
+	if(itemcost>=30 && itemcost<=60)
+		{
+			document.getElementById("totalDiscount").value=5;
+		}
+		
+		if(itemcost>60 && itemcost<=100)
+		{
+			document.getElementById("totalDiscount").value=10;
+		}
+		
+		if(itemcost>100)
+		{
+			document.getElementById("totalDiscount").value=20;
+		}
+		
+	totaldiscount=document.getElementById("totalDiscount").value;
+	total=parseInt;
+	document.getElementById("Total").value=parseInt(itemcost)-parseInt(totaldiscount);
+	
+	
+		if (fullname == "")
+		{
+			document.getElementById("error").innerHTML = "No information is typed in!";
+		} 
+		else 
+		{
+			document.getElementById("error").innerHTML = "";
+			document.getElementById("disc").innerHTML="Buy any Item with <br/> The Total Item Cost </br> between £30 and £60 and <br/> get a £5 discount!";
+			document.getElementById("disc1").innerHTML=" Buy more Items up to £100 <br/>and get £10 discount!";
+			document.getElementById("disc2").innerHTML="If the Total Item Cost <br/> exceed the amount of £100 ,<br/> the Discount would be £20!";
+		} 
+		
+		
+		
+		
+	}
+	
+
+</script>
+</head>
+<body>
+<h1>Order Form</h1>
+<form>
+<table align="center">
+	<tr>
+		<td></td>
+		<td><h2><a href="customer.php">Customer Page</a></h2></td>
+		<td></td>
+	</tr>
+	<br/>
+	<tr>
+		<td> Name : </td>
+		<td> <input type="text" id="Name" size="50" ></td>
+		<td><p id="error" style="color:red; font-size:25px; text-decoration:underline;"></p></td>
+		
+	</tr>
+	<br/>
+	<tr>
+		<td colspan"2"> Items : </td>	
+	</tr>	
+	<br/>
+	<tr>
+	<td>
+		<select id="item1">
+			<option value="0" selected>0</option>
+			<option value="1" >1</option>
+			<option value="2">2</option>
+			<option value="3">3</option>
+			<option value="4">4</option>
+			<option value="5">5</option>
+		</select>
+	</td>
+	<td>	
+		<select id="item2">
+			<option value="0" selected>0</option>
+			<option value="1" >1</option>
+			<option value="2">2</option>
+			<option value="3">3</option>
+			<option value="4">4</option>
+			<option value="5">5</option>
+		</select>
+	</td>
+	<td>
+		<select id="item3">
+			<option value="0" selected>0</option>
+			<option value="1" >1</option>
+			<option value="2">2</option>
+			<option value="3">3</option>
+			<option value="4">4</option>
+			<option value="5">5</option>
+		</select>
+	</td>
+	</tr>
+	<br/>
+	<tr>
+		<td><img src="image/img1.jpg" alt="image1"></td>
+		<td><img src="image/img2.jpg" alt="image2"></td>
+		<td><img src="image/img3.jpg" alt="image3"></td>
+	</tr>
+	<br/>
+	<tr>
+		<td>Total Number of Items:</td>
+		<td><input type="text" id="totalItems" disabled="disabled" size="10"></td>
+	</tr>
+	<br/>
+	<tr>
+		<td>Items Cost:</td>
+		<td><input type="text" id="totalCost" disabled="disabled" size="10"></td>
+	</tr>
+	<br/>
+	<tr>
+		<td>Discount:</td>
+		<td><input type="text" id="totalDiscount" disabled="disabled" size="10"></td>
+	</tr>
+	<br/>
+	<tr>
+	<td><p id="disc" style="color:red;"> </p></td>
+	<td><p id="disc1"style="color:red;"></p></td>
+	<td><p id="disc2"style="color:red;"> </p></td>
+	</tr>
+	<br/>
+	<tr>
+		<td><input type="button" value="Clear                " onClick="this.form.reset();"></td>
+		<td><input type="button" value="Calculate Order Cost" id="Cost" onClick="Test()"></td>
+	</tr>
+	<br/>
+		<td>Total Cost of the Order:</td>
+		<td><input type=""text" id="Total" disabled="disabled" size="10"</td>
+
+</table>
+<br/><br/><br/>
+</form>
+</body>
+</html>
